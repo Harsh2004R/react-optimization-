@@ -5,7 +5,12 @@ const fetchHeros = () => {
   return axios.get("http://localhost:4000/heros")
 }
 function RQHeros() {
-  const { isLoading, data, isError, error } = useQuery("heros", fetchHeros)
+  const { isLoading, data, isError, error, isFetching } = useQuery("heros", fetchHeros,
+    {
+      // cacheTime:100000  increase cache time default is 5 min.
+    }
+  )
+  // console.log(isLoading, isFetching);
   if (isLoading) {
     return (
       <h2>Loading....</h2>
