@@ -3,15 +3,24 @@ import axios from "axios"
 const Heros = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [data, setData] = useState([])
+    const [error, setError] = useState("")
     useEffect(() => {
         axios.get("http://localhost:4000/heros").then((res) => {
             setData(res.data)
             setIsLoading(false)
+        }).catch((error) => {
+            setError(error.message);
+            setIsLoading(false);
         })
     }, [])
     if (isLoading) {
         return (
             <h2>Loading...</h2>
+        )
+    }
+    if (error) {
+        return (
+            <h2>{error}</h2>
         )
     }
     return (
@@ -20,7 +29,7 @@ const Heros = () => {
                 Heros page
             </h1>
             <div>
-                {data.map((el,i)=>{
+                {data.map((el, i) => {
                     return <div key={i} >{el.name}</div>
                 })}
 
