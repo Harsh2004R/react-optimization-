@@ -5,6 +5,13 @@ const fetchHeros = () => {
   return axios.get("http://localhost:4000/heros")
 }
 function RQHeros() {
+  const onSuccess = (data) => {
+    console.log(`perform any side effects on success of query...${data}`)
+   
+  }
+  const onError = (error) => {
+    console.log(`perform any side effects on error of query...${error}`)
+  }
   const { isLoading, data, isError, error, isFetching, refetch } = useQuery("heros", fetchHeros,
     {
       // cacheTime:100000  increase cache time default is 5 min.
@@ -13,7 +20,8 @@ function RQHeros() {
       // retryOnMount : true,false,"always" // this will only triggred when component mounts if true or always...
       // refetchInterval : true,2000,false  // this will pole(make fetch call again and again) our data after given interval like 2000ms...
       // refetchIntervalInBackground :true,false,2000 // this will poll our data as background even if we are not on our browser...
-
+      onSuccess: onSuccess,
+      onError: onError,
 
 
 
