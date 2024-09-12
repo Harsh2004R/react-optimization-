@@ -8,9 +8,10 @@ function RQHeros() {
   const { isLoading, data, isError, error, isFetching } = useQuery("heros", fetchHeros,
     {
       // cacheTime:100000  increase cache time default is 5 min.
+      staleTime: 10000 // This will prevent of fetch call till given time 
     }
   )
-  // console.log(isLoading, isFetching);
+  console.log(isLoading, isFetching);
   if (isLoading) {
     return (
       <h2>Loading....</h2>
