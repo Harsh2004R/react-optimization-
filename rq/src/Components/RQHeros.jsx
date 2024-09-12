@@ -8,7 +8,9 @@ function RQHeros() {
   const { isLoading, data, isError, error, isFetching } = useQuery("heros", fetchHeros,
     {
       // cacheTime:100000  increase cache time default is 5 min.
-      staleTime: 10000 // This will prevent of fetch call till given time 
+      // staleTime: 10000 // This will prevent of fetch call till given time 
+      // refetchOnWindowFocus : true ,false, "always" // it will fetch data when it changed in db if we set it to true or always.
+      // retryOnMount : true,false,"always" // this will only triggred when component mounts if true or always...
     }
   )
   console.log(isLoading, isFetching);
