@@ -15,16 +15,19 @@ const Heros = () => {
     }, [])
     if (isLoading) {
         return (
-            <h2>Loading...</h2>
+            <div>
+                <h2>Loading...</h2></div>
         )
     }
     if (error) {
         return (
-            <h2>{error}</h2>
+            <div>
+                <h2>{error}</h2></div>
         )
     }
     return (
-        <>
+
+        <div>
             <h1>
                 Heros page
             </h1>
@@ -34,7 +37,8 @@ const Heros = () => {
                 })}
 
             </div>
-        </>
+        </div>
+
     )
 }
 
