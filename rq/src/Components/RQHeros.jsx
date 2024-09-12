@@ -22,10 +22,14 @@ function RQHeros() {
       // refetchIntervalInBackground :true,false,2000 // this will poll our data as background even if we are not on our browser...
       onSuccess: onSuccess,
       onError: onError,
+      // select:(data)=>{
+      //   const Heros = data.data.map((el)=>el.name)
+      //   return Heros;
+      // }, this select option is use to transform your data as for your needs...
 
 
 
-      enabled: false
+      enabled: false,
 
 
 
