@@ -1,13 +1,14 @@
 import React from 'react'
 import { useQuery } from "react-query"
 import axios from "axios"
+import { Link } from 'react-router-dom'
 const fetchHeros = () => {
   return axios.get("http://localhost:4000/heros")
 }
 function RQHeros() {
   const onSuccess = (data) => {
     console.log(`perform any side effects on success of query...${data}`)
-   
+
   }
   const onError = (error) => {
     console.log(`perform any side effects on error of query...${error}`)
@@ -56,7 +57,7 @@ function RQHeros() {
         {data?.data.map((el, i) => {
           return (
             <div key={i}>
-              {el.name}
+              <Link to={`/heros-details/${el.id}`}>{el.name}</Link>
             </div>
           )
         })}

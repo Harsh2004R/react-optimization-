@@ -3,6 +3,7 @@ import { Route, Routes, Link } from 'react-router-dom'
 import HomePage from '../Components/Home.jsx'
 import RQHerosPage from '../Components/RQHeros.jsx'
 import HerosPage from '../Components/Heros.jsx'
+import RQHeros_details from "../Components/RQHeros_details.jsx"
 const AllRoutes = () => {
     return (
         <>
@@ -16,6 +17,7 @@ const AllRoutes = () => {
                 <Route path='/' element={<HomePage />} />
                 <Route path='/RQHeros' element={<RQHerosPage />} />
                 <Route path='/Heros' element={<HerosPage />} />
+                <Route path='/heros-details/:heroID' element={<RQHeros_details />} />
             </Routes>
         </>
     )
