@@ -25,5 +25,45 @@
             "name": "zippy",
             "views": 105
         }
+    ],
+    "friends": [
+        {
+            "id": "1",
+            "name": "harsh123"
+        },
+        {
+            "id": "2",
+            "name": "rahul123"
+        },
+        {
+            "id": "3",
+            "name": "chunnu123"
+        },
+        {
+            "id": "4",
+            "name": "munnu123"
+        },
+        {
+            "id": "5",
+            "name": "zippy123"
+        }
+    ],
+    "colors": [
+        {
+            "id": "1",
+            "color": "red"
+        },
+        {
+            "id": "2",
+            "color": "blue"
+        },
+        {
+            "id": "3",
+            "color": "green"
+        },
+        {
+            "id": "4",
+            "color": "yellow"
+        }
     ]
 }
